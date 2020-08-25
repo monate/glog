@@ -1,6 +1,6 @@
 /* src/config.h.  Generated from config.h.in by configure.  */
 /* src/config.h.in.  Generated from configure.ac by autoheader.  */
-#error "lkjfdlgj"
+
 /* Modified for TrustInSoft Analyzer */
 
 /* define if glog doesn't use RTTI */
