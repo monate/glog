@@ -189,8 +189,11 @@ class Mutex {
   // We want to make sure that the compiler sets is_safe_ to true only
   // when we tell it to, and never makes assumptions is_safe_ is
   // always true.  volatile is the most reliable way to do that.
-  volatile bool is_safe_;
-
+#if defined(__TRUSTINSOFT_ANALYZER__)
+    bool is_safe_;
+#else
+    volatile bool is_safe_;
+#endif
   inline void SetIsSafe() { is_safe_ = true; }
 
   // Catch the error of writing Mutex when intending MutexLock.
